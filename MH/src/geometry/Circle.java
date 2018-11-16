@@ -1,9 +1,9 @@
 package geometry;
 
 public class Circle {
-	private Point center;
-	private int r;
-	private boolean selected;
+	protected Point center;
+	protected int r;
+	protected boolean selected;
 
 	public Circle() {
 
@@ -17,6 +17,14 @@ public class Circle {
 	public Circle(Point center, int r, boolean selected) {
 		this(center, r);
 		this.selected = selected;
+	}
+	
+	public boolean contains(int x, int y) {
+		return center.distance(x, y) <= r;
+	}
+	
+	public boolean contains(Point p) {
+		return this.contains(p.getX(), p.getY());
 	}
 	
 	// Center:(xCenter,yCenter), radius = <radius>

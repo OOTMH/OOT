@@ -20,10 +20,19 @@ public class Rectangle {
 		this(upperLeft, width, height);
 		this.selected = selected;
 	}
+
+	public boolean contains(int x, int y) {
+		return (upperLeft.getX() < x && x < upperLeft.getX() + width && upperLeft.getY() < y
+				&& y < upperLeft.getY() + height);
+	}
 	
+	public boolean contains(Point p) {
+		return this.contains(p.getX(), p.getY());
+	}
+
 	// Upper left point:(xUpperLeft,yUpperLeft), width = <width>, height = <height>
 	public String toString() {
-		return "Upper left point: "+upperLeft+", width = "+width+", height = "+height;
+		return "Upper left point: " + upperLeft + ", width = " + width + ", height = " + height;
 	}
 
 	public int area() {

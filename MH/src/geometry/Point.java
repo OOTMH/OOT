@@ -21,6 +21,10 @@ public class Point {
 		// this.y = y;
 		this.selected = selected;
 	}
+	
+	public boolean contains(int x, int y) {
+		return this.distance(x, y) <= 2;
+	}
 
 	public String toString() {
 		// (x,y)

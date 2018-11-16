@@ -111,6 +111,12 @@ public class Test {
 		Line l4 = new Line(new Point(10, 11), new Point(12, 13));
 		
 		System.out.println("l3 equals l4: "+l3.equals(l4));
+		
+		System.out.println(p5.contains(10,7));
+		
+		Donut d = new Donut();
+		System.out.println(d.getR()+" "+d.getInnerR());
+		System.out.println();
 	}
 
 }

@@ -19,6 +19,10 @@ public class Line {
 		this.selected = selected;
 	}
 	
+	public boolean contains(int x, int y) {
+		return (startPoint.distance(x, y) + endPoint.distance(x, y)) - length() < 2;
+	}
+	
 	// (xStartPoint,yStartpoint)-->(xEndPoint,yEndpoint)
 	@Override
 	public String toString() {
