@@ -117,6 +117,9 @@ public class Test {
 		Donut d = new Donut();
 		System.out.println(d.getR()+" "+d.getInnerR());
 		System.out.println();
+		
+		Donut d2 = new Donut(p1, 50, 25, true);
+		System.out.println(d2);
 	}
 
 }
