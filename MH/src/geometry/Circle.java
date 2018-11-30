@@ -19,6 +19,26 @@ public class Circle extends Shape {
 		this(center, r);
 		this.selected = selected;
 	}
+	
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		if(o instanceof Circle)
+			return (int) (this.area() - ((Circle)o).area());
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		center.moveBy(byX, byY);
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		center.moveTo(x, y);
+	}
 
 	@Override
 	public void draw(Graphics g) {
@@ -57,5 +77,6 @@ public class Circle extends Shape {
 	public void setR(int r) {
 		this.r = r;
 	}
+
 
 }

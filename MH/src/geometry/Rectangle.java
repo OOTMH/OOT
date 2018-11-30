@@ -22,6 +22,24 @@ public class Rectangle extends Shape{
 		this.selected = selected;
 	}
 	
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		upperLeft.moveBy(byX, byY);
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		upperLeft.moveTo(x, y);
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Rectangle)
+			return (int) (this.area() - ((Rectangle)o).area());
+		return 0;
+	}
 
 	@Override
 	public void draw(Graphics g) {

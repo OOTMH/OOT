@@ -22,6 +22,27 @@ public class Point extends Shape {
 		// this.y = y;
 		this.selected = selected;
 	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Point) 
+			return (int) (this.distance(0, 0) - ((Point) o).distance(0,0));
+		return 0;
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		x += byX;
+		y += byY;
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		this.x = x;
+		this.y = y;
+	}
 
 	@Override
 	public void draw(Graphics g) {

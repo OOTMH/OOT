@@ -20,6 +20,27 @@ public class Line extends Shape{
 		this.selected = selected;
 	}
 	
+
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Line)
+			return (int) (this.length() - ((Line)o).length());
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		startPoint.moveBy(byX, byY);
+		endPoint.moveBy(byX, byY);
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	@Override
 	public void draw(Graphics g) {
 		g.drawLine(startPoint.getX(), startPoint.getY(), endPoint.getX(), endPoint.getY());
