@@ -1,5 +1,6 @@
 package geometry;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Test {
@@ -55,7 +56,13 @@ public class Test {
 		// postaviti radius kruga c1 na vrednost udaljenosti tacaka
 		// center c1 i l1 startPoint
 
-		c1.setR((int) c1.getCenter().distance(l1.getStartPoint().getX(), l1.getStartPoint().getY()));
+		try {
+			//c1.setR((int) c1.getCenter().distance(l1.getStartPoint().getX(), l1.getStartPoint().getY()));
+			c1.setR(10);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		System.out.println("R c1: " + c1.getR());
 
 		// postaviti selected c1 na vrednost izraza koji proverava
@@ -267,6 +274,27 @@ public class Test {
 		for (int i = 0; i < donuts.length; i++) {
 			System.out.println(donuts[i]);
 		}
+		
+		
+		System.out.println(donuts[2]);
+		donuts[2] = d30;
+		System.out.println(donuts[2]);
+		
+		try {
+			System.out.println(donuts[2]);
+			Integer.parseInt("pet");
+		} catch (ArrayIndexOutOfBoundsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Ne postoji element sa indeksom 10");
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("ne mogu da pretvorim u int");
+		} finally {
+			System.out.println("ja se uvek izvrsavam!");
+		}
+		System.out.println("da li sam se ispisao na konzolu ");
 		
 	}
 
