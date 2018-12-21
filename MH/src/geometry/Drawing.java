@@ -9,8 +9,22 @@ import java.util.Iterator;
 import javax.management.InstanceAlreadyExistsException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Drawing extends JPanel {
+	public Drawing() {
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent me) {
+				Point point = new Point(me.getX(), me.getY());
+				shapes.add(point);
+				repaint();
+			}
+		});
+	}
+	
+	ArrayList<Shape> shapes = new ArrayList<Shape>();
 
 	public static void main(String[] args) {
 
@@ -23,6 +37,7 @@ public class Drawing extends JPanel {
 	}
 	
 	public void paint(Graphics g) {
+		/*
 		Point p1 = new Point(50, 50);
 		//p1.draw(g);
 		g.setColor(Color.RED);
@@ -52,18 +67,18 @@ public class Drawing extends JPanel {
 				, 80, innerRD2);
 		//d2.draw(g);
 		
-		ArrayList<Shape> shapes = new ArrayList<Shape>();
+		
 		shapes.add(p1);
 		shapes.add(l1);
 		shapes.add(r1);
 		shapes.add(c1);
 		shapes.add(d1);
 		
-		/*shapes.get(2).draw(g);
+		shapes.get(2).draw(g);
 		shapes.add(2, p1);
 		shapes.get(2).draw(g);
 		shapes.remove(2);
-		shapes.get(2).draw(g);*/
+		shapes.get(2).draw(g);
 		p1.setX(300);
 		Iterator<Shape> it = shapes.iterator();
 		while(it.hasNext()) {
@@ -72,8 +87,8 @@ public class Drawing extends JPanel {
 			temp.draw(g);
 			//System.out.println(temp);
 			// iscrtati samo krugove
-			/*if(temp instanceof Circle && !(temp instanceof Donut))
-				temp.draw(g);*/
+			if(temp instanceof Circle && !(temp instanceof Donut))
+				temp.draw(g);
 			// iscrtati povrsinske oblike
 //			if(temp instanceof Circle || temp instanceof Rectangle)
 //				temp.draw(g);
@@ -89,6 +104,12 @@ public class Drawing extends JPanel {
 		
 		p1.setSelected(true);
 		p1.draw(g);
+	*/
+		Iterator<Shape> it = shapes.iterator();
+		while(it.hasNext()) {
+			Shape temp = it.next();
+			temp.draw(g);
+		}	
 	}
 
 }
